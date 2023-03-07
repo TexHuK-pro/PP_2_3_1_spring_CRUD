@@ -4,7 +4,6 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "users")
-@org.hibernate.annotations.Entity(dynamicUpdate = true)
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,6 +12,9 @@ public class User {
     private String firstName;
     @Column(name = "last_name")
     private String lastName;
+
+    public User() {
+    }
 
     public Long getId() {
         return id;
